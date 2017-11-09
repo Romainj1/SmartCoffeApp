@@ -1,14 +1,22 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-slides loop="true">
+    <ion-slide>
+      <img (click)="goSelectionCaffe()" src="assets/icon/coffeicon.png" style="width:80px">
+    </ion-slide>
+
+    <ion-slide>
+      <img (click)="goGestionUser()" src="assets/icon/userCaffe.png" style="width:80px">
+    </ion-slide>
+
+    <ion-slide (click)="goUrlSettings()">
+      <h2>Api Url</h2>
+
+    </ion-slide>
+  </ion-slides>
+
 </ion-content>
