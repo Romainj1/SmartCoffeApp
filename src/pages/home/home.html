@@ -1,21 +1,21 @@
 <ion-header>
-
+  <ion-navbar color="primary">
+    <ion-title >Application Cafee</ion-title>
+  </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content>
   <ion-slides loop="true">
     <ion-slide>
-      <img (click)="goSelectionCaffe()" src="assets/icon/coffeicon.png" style="width:80px">
+      <img (click)="goSelectionCaffe()" src="assets/icon/coffeicon.png" style="width:130px">
     </ion-slide>
 
     <ion-slide>
-      <img (click)="goGestionUser()" src="assets/icon/userCaffe.png" style="width:80px">
+      <img (click)="goGestionUser()" src="assets/icon/userCaffe.png" style="width:130px">
     </ion-slide>
 
     <ion-slide (click)="goUrlSettings()">
       <h2>Api Url</h2>
-
     </ion-slide>
   </ion-slides>
 

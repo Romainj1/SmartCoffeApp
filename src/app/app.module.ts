@@ -4,26 +4,22 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { HttpModule } from '@angular/http';
-  import { IonicStorageModule } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
+import { NativePageTransitions } from '@ionic-native/native-page-transitions';
+import { HTTP } from '@ionic-native/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SelectionCafeePage } from '../pages/selection-cafee/selection-cafee';
 import { GestionUserPage } from '../pages/gestion-user/gestion-user';
 import { ApiConnectionProvider } from '../providers/api-connection/api-connection';
-import { CreateUserPopoverPage } from '../pages/gestion-user/gestion-user';
-import { ShowUserPopoverPage } from '../pages/gestion-user/gestion-user';
-import { UrlSettingsPage } from '../pages/url-settings/url-settings';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SelectionCafeePage,
-    GestionUserPage,
-    CreateUserPopoverPage,
-    ShowUserPopoverPage,
-    UrlSettingsPage
+    GestionUserPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -35,17 +31,16 @@ import { UrlSettingsPage } from '../pages/url-settings/url-settings';
     MyApp,
     HomePage,
     SelectionCafeePage,
-    GestionUserPage,
-    CreateUserPopoverPage,
-    ShowUserPopoverPage,
-    UrlSettingsPage
+    GestionUserPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     ApiConnectionProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-
+    ApiConnectionProvider,
+    NativePageTransitions,
+    HTTP,
   ]
 })
 export class AppModule {}

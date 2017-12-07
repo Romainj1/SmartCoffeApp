@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>selection-cafee</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="center">
+  <ion-list>
+    <ion-list-header>
+      Intensité:
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="4" snaps="true" step="1" [(ngModel)]="intensite">
+        <ion-icon range-left small name="flame"></ion-icon>
+        <ion-icon range-right name="flame"></ion-icon>
+      </ion-range>
+    </ion-item>
+
+    <ion-list-header>
+      Volume:
+    </ion-list-header>
+    <ion-item>
+      <ion-range min="0" max="3" snaps="true" step="1" [(ngModel)]="volume">
+        <ion-icon range-left small name="cafe"></ion-icon>
+        <ion-icon range-right name="cafe"></ion-icon>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+      <button (click)="makeCoffe()" color="secondary" ion-button full large>Make Coffe</button>
+  </ion-toolbar>
+</ion-footer>
