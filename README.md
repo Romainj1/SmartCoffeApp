@@ -19,7 +19,7 @@ $ ionic build android
 Pour le lancement de l'application, activez les options devellopeur de votre smartphone et branchez-le à votre Pc. Puis executez:
 
 ```bash
-$ ionic run android
-$ ionic run ios
+$ ionic cordova run android
+$ ionic cordova run ios
 ```
 
