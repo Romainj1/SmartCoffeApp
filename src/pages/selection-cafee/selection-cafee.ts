@@ -18,7 +18,7 @@ export class SelectionCafeePage {
   }
 
   makeCoffe(){
-    this.apiConnectionProvider.get("/coffee").then((res)=>{
+    this.apiConnectionProvider.get("/coffee?intensity="+this.intensite+"&volume="+this.volume).then((res)=>{
       let toast = this.toastCtrl.create({
         message: "CAFE EN COURS (200)",
         duration: 3000,

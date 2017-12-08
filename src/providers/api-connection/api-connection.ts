@@ -18,7 +18,7 @@ export class ApiConnectionProvider {
   constructor(private http: HTTP) {
     // default url that might change
     // upToDate : 7/12/2017
-    this.url = "172.18.22.86:5000";
+    this.url = "http://172.18.22.86:5000";
   }
 
   // getter & setter
