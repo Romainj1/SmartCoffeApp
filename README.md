@@ -1,6 +1,6 @@
 ## Application Mobile SmartCoffee
 
-Cette Application Mobile developpé sous Ionic 3 a pour but l'utilisation de l'Api de Machine à Caffée de L'INSA de Rouen. Un video du Porjet sera bientôt disponible.
+Cette Application Mobile developpée sous Ionic 3 a pour but l'utilisation de l'Api de Machine à Caffée de L'INSA de Rouen. Une video du Projet sera bientôt disponible.
 Lien vers le projet github de l'Api : https://github.com/Koisell/SmartCoffeeMachine.
 
 
