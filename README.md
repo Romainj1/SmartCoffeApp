@@ -1,26 +1,25 @@
-This is a starter template for [Ionic](http://ionicframework.com/docs/) projects.
+## Application Mobile SmartCoffee
 
-## How to use this template
+Cette Application Mobile developpée sous Ionic 3 a pour but l'utilisation de l'Api de Machine à Caffée de L'INSA de Rouen. Une video du Projet sera bientôt disponible.
+Lien vers le projet github de l'Api : https://github.com/Koisell/SmartCoffeeMachine.
 
-*This template does not work on its own*. The shared files for each starter are found in the [ionic2-app-base repo](https://github.com/ionic-team/ionic2-app-base).
 
-To use this template, either create a new ionic project using the ionic node.js utility, or copy the files from this repository into the [Starter App Base](https://github.com/ionic-team/ionic2-app-base).
-
-### With the Ionic CLI:
-
-Take the name after `ionic2-starter-`, and that is the name of the template to be used when using the `ionic start` command below:
+### Utilisation d'Ionic:
+Installation d'Ionic/Cordova via npm: 
 
 ```bash
-$ sudo npm install -g ionic cordova
-$ ionic start myBlank blank
+$ npm install ionic cordova
 ```
 
-Then, to run it, cd into `myBlank` and run:
+Pour la compilation du fichier apk, executez:
 
 ```bash
-$ ionic cordova platform add ios
+$ ionic build android
+```
+Pour le lancement de l'application, activez les options devellopeur de votre smartphone et branchez-le à votre Pc. Puis executez:
+
+```bash
+$ ionic cordova run android
 $ ionic cordova run ios
 ```
-
-Substitute ios for android if not on a Mac.
 
