@@ -18,7 +18,7 @@ export class ApiConnectionProvider {
   constructor(private http: HTTP) {
     // default url that might change
     // upToDate : 7/12/2017
-    this.url = "172.18.22.86";
+    this.url = "172.18.22.86:5000";
   }
 
   // getter & setter
@@ -33,22 +33,25 @@ setUrl(_url){
 // method get in order tomake get request
 // parameter path : string
 get(path){
-
-// signature : get(url, parameters, headers)
-this.http.get(this.url+path, {}, {})
-.then(data => {
-  console.log(data.status);
-  console.log(data.data); // data received by server
-  console.log(data.headers);
-
-})
-.catch(error => {
-
-  console.log(error.status);
-  console.log(error.error); // error message as string
-  console.log(error.headers);
-
-});
+  return new Promise((resolve,reject)=>{
+    this.http.get(this.url+path, {},{})
+    .then(res=>{
+      console.log(res);
+      switch(res.status){
+        case 400: reject(res);break;
+        case 401: reject(res);break;
+        case 402: reject(res);break;
+        case 403: reject(res);break;
+        case 404: reject(res);break;
+        case 500: reject(res);break;
+        case 501: reject(res);break;
+        case 502: reject(res);break;
+        case 200 : resolve(res);break;
+      };
+    },(err) =>{
+      reject(err);
+      console.log(err);
+    });
+  });
 }
-
 }
