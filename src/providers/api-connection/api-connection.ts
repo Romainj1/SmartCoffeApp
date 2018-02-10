@@ -18,7 +18,7 @@ export class ApiConnectionProvider {
   constructor(private http: HTTP) {
     // default url that might change
     // upToDate : 7/12/2017
-    this.url = "http://172.18.22.86:5000";
+    this.url = "http://172.18.22.86:4242/coffee?volume=1&intensity=1";
   }
 
   // getter & setter
@@ -34,7 +34,7 @@ setUrl(_url){
 // parameter path : string
 get(path){
   return new Promise((resolve,reject)=>{
-    this.http.get(this.url+path, {},{})
+    this.http.get(this.url, {},{})
     .then(res=>{
       console.log(res);
       switch(res.status){

@@ -12,14 +12,17 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SelectionCafeePage } from '../pages/selection-cafee/selection-cafee';
 import { GestionUserPage } from '../pages/gestion-user/gestion-user';
+import { GestionUrlPage } from '../pages/gestion-url/gestion-url';
 import { ApiConnectionProvider } from '../providers/api-connection/api-connection';
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SelectionCafeePage,
-    GestionUserPage
+    GestionUserPage,
+    GestionUrlPage
   ],
   imports: [
     BrowserModule,HttpModule,
@@ -31,7 +34,8 @@ import { ApiConnectionProvider } from '../providers/api-connection/api-connectio
     MyApp,
     HomePage,
     SelectionCafeePage,
-    GestionUserPage
+    GestionUserPage,
+    GestionUrlPage
   ],
   providers: [
     StatusBar,

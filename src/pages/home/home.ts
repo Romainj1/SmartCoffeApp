@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { SelectionCafeePage } from '../selection-cafee/selection-cafee';
 import { GestionUserPage } from '../gestion-user/gestion-user';
 import { ApiConnectionProvider } from '../../providers/api-connection/api-connection';
 import { NativePageTransitions, NativeTransitionOptions } from '@ionic-native/native-page-transitions';
+import { GestionUrlPage } from '../gestion-url/gestion-url';
 
 @Component({
   selector: 'page-home',
@@ -20,7 +21,7 @@ export class HomePage {
     fixedPixelsBottom: 60
 };
 
-  constructor(private nativePageTransitions: NativePageTransitions, public apiConnectionProvider : ApiConnectionProvider ,public navCtrl: NavController) {
+  constructor(public toastCtrl:ToastController,private nativePageTransitions: NativePageTransitions, public apiConnectionProvider : ApiConnectionProvider ,public navCtrl: NavController) {
   }
 
   ionViewDidLoad(){
@@ -30,9 +31,25 @@ export class HomePage {
 
 goSelectionCaffe(){
   console.log('goselection Caffe');
+  this.apiConnectionProvider.get("destrucs").then((res)=>{
+      let toast = this.toastCtrl.create({
+        message: "CAFE EN COURS (200)",
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+
+    },(err)=>{
+      let toast = this.toastCtrl.create({
+        message: "error :"+err.status,
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
+    });
   //nav Options to make transitions effects
-this.nativePageTransitions.fade(this.transitionsOptionsFade);
-this.navCtrl.push(SelectionCafeePage);
+// this.nativePageTransitions.fade(this.transitionsOptionsFade);
+// this.navCtrl.push(SelectionCafeePage);
 }
 
 goGestionUser(){
@@ -51,7 +68,7 @@ this.nativePageTransitions.slide(options);
 }
 
 goUrlSettings(){
-
+  this.navCtrl.push(GestionUrlPage);
 }
 
 }
